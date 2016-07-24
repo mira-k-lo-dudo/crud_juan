@@ -17,9 +17,11 @@ Se incluye dentro del repositorio un fichero index.php que incluye un ejemplo de
         include "crud.php";
 
         // $crud=new CRUD(SISTEMA_GESTOR_DE_BASE_DE_DATOS,SERVIDOR,USUARIO,CONTRASEÑA,BASE_DE_DATOS);
+
 		$crud=new CRUD("mysqli","localhost","root","","inmobiliaria_ci");
        
         // $crud->render(TABLA);
+
 		$crud->render("vivienda");
         ?>
 
@@ -37,8 +39,4 @@ Donde:
 
 CopyLeft 2016 Juan Ferrer / juanferrer437@hotmail.com / Murcia / España
 
-<<<<<<< HEAD
-Puede modificar, cambiar, mejorar lo que desee. 
-=======
-Puede modificar, cambiar, mejorar lo que desee. 
->>>>>>> origin/master
+Puede modificar, cambiar o mejorar lo que desee. 
