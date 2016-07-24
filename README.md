@@ -17,10 +17,10 @@ Se incluye dentro del repositorio un fichero index.php que incluye un ejemplo de
         include "crud.php";
 
         // $crud=new CRUD(SISTEMA_GESTOR_DE_BASE_DE_DATOS,SERVIDOR,USUARIO,CONTRASEÑA,BASE_DE_DATOS);
-
-
-        
-        $crud->render(TABLA);
+		$crud=new CRUD("mysqli","localhost","root","","inmobiliaria_ci");
+       
+        // $crud->render(TABLA);
+		$crud->render("vivienda");
         ?>
 
 Donde:
@@ -31,7 +31,7 @@ Donde:
 * CONTRASEÑA: Contraseña del usuario anterior del SGBD.
 * BASE_DE_DATOS: Base de datos sobre la que vamos a trabajar.
 * TABLA: Tabla de la BD en la que vamos a hacer CRUD.
-* getAssoc()
+
     
 ## Licencia
 
