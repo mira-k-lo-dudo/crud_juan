@@ -37,4 +37,8 @@ Donde:
 
 CopyLeft 2016 Juan Ferrer / juanferrer437@hotmail.com / Murcia / España
 
+<<<<<<< HEAD
 Puede modificar, cambiar, mejorar lo que desee. 
+=======
+Puede modificar, cambiar, mejorar lo que desee. 
+>>>>>>> origin/master
