@@ -57,6 +57,7 @@ public function modificarDato($valor)
 }
 
 public function render($table) {
+	
 	$datos_encabezado=$this->getColumn($table);
 	echo " <div class='page-header'><h1><span class='label label-primary'>CRUD de la tabla $table</span></h1></div>";
 
@@ -79,7 +80,10 @@ public function render($table) {
 		echo "<tr>";
 	for ($i=0;$i<$maximo;$i++) { echo "<td>".$datostabla[$i]."</td>"; }
 		
-		echo "<td><a href='crud_modifica.php?tabla=$table&id=$datostabla[0]'>Modificar</a></td>";
+		
+		echo "<td><input type='button' name='Modificar' value='Modificar' onclick='window.open(\"";
+		echo "crud_modifica.php?tabla=$table&id=$datostabla[0]\",\"ventana\",\"menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes\")";
+		echo "'></td>";
 			
 	   echo "<td><a href='crud_elimina.php?tabla=$table&id=$datostabla[0]'>Eliminar</a></td>";
 	echo "</tr>";
