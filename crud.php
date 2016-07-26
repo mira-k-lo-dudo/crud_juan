@@ -81,12 +81,11 @@ public function render($table) {
 	for ($i=0;$i<$maximo;$i++) { echo "<td>".$datostabla[$i]."</td>"; }
 		
 		
-		echo "<td><input type='button' name='Modificar' value='Modificar' onclick='window.open(\"";
-		echo "crud_modifica.php?tabla=$table&id=$datostabla[0]\",\"ventana\",\"menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes\")";
-		echo "'></td>";
-			
-	   echo "<td><a href='crud_elimina.php?tabla=$table&id=$datostabla[0]'>Eliminar</a></td>";
-	echo "</tr>";
+		echo "<td><a href='crud_modifica.php?tabla=$table&id=$datostabla[0]' onclick=\"window.open(this.href, this.target, 'toolbar=no, location=no, titlebar=no, status=no, menubar=no,top=100,left=50, width=800'); return false;\" >Modificar</a></td>";
+ 
+		echo "<td><a href='crud_elimina.php?tabla=$table&id=$datostabla[0]' onclick=\"window.open(this.href, this.target, 'toolbar=no, location=no, titlebar=no, status=no, menubar=no,top=100,left=50, width=800'); return false;\" >Eliminar</a></td>";
+	
+	   	echo "</tr>";
 		}
 
 	
