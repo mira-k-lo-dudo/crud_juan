@@ -12,27 +12,25 @@ class CRUD{
 
 var $bd;
 
-public function __construct($type,$server,$user,$password,$database) {
-	include_once "adodb/adodb.inc.php";
+public function __construct($type, $servidor,$usuario,$password,$basedatos)	{
 	switch ($type) {
+		case 'mysql':
 		case 'mysqli':
 		case 'mariadb':
-			$this->bd=newADOConnection("mysqli");
-			$this->bd->Connect($server,$user,$password,$database);
-			break;
-		
-		case 'mysql':
-			$this->bd=newADOConnection("mysql");
-			$vbd->Connect($server,$user,$password,$database);
-			break;
+			try {
+			$this->bd=new PDO("mysql:host=$servidor;dbname=$basedatos", $usuario, $password);
+			}
+		catch (PDOException $e) {
+			die("Error al conectar con el SGBD o la BD no existe. No puedo continuar ...");
+		}
+	}
+	}
 
-	}
-	}
 
 public function getColumn($table)
 {
 	$sql="SHOW COLUMNS FROM $table";
-	$datos=$this->bd->Execute($sql)->getRows();
+	$datos=$this->bd->query($sql)->fetchAll();
 	$array=array();
 	$contador=0;
 	foreach ($datos as $valor) 
@@ -46,7 +44,7 @@ public function getColumn($table)
 
 public function getData($table){
 	$consulta="select * from $table";
-	$datos=$this->bd->Execute($consulta)->getRows();
+	$datos=$this->bd->query($consulta)->fetchAll();
 	return $datos;
 }
 
