@@ -6,8 +6,6 @@ crud es una clase realizada en PHP que permite realizar CRUDs (CRUD es el acroni
 ## Prerequisitos
 
 * PHP Version 5.2+
-* ADODB (inlcuido junto con la clase)
-* BOOTSTRAP (incluido con la clase)
   
 ## Uso
 
